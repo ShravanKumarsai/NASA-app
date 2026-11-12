@@ -1,13 +1,19 @@
-# Silent Explorers — NASA Hackathon
+# Silent Explorers — Abandoned, Not Forgotten
 
-An interactive tribute to the machines left on the Moon and Mars. Six missions, two worlds, and the stories that remain.
+The original animated Silent Explorers website remains the homepage. The React mission archive is a separate add-on at `/app.html`; it does not replace or rewrite the original animation experience. The animation reference is [NASA-hackathon](https://github.com/jadonjoel/NASA-hackathon).
 
 ## Run locally
+
+Use Node.js 20.19+ or 22.12+ and npm. Open the repository folder in VS Code, then install the dependencies:
 
 ```sh
 npm install
 npm run dev
 ```
+
+Vite prints a local URL (usually `http://localhost:5173`). Open that URL to see the original animated experience. The React add-on is at `http://localhost:5173/app.html`. The dev server refreshes the page as files change.
+
+You can also start the server from VS Code with **Terminal → Run Task → Run Silent Explorers (Vite)**. The **Live Server** extension is not used for this React app; it does not bundle the React imports. To check a production build, run **Terminal → Run Task → Build Silent Explorers** or `npm run build`.
 
 ## Build
 
@@ -16,24 +22,28 @@ npm run build
 npm run preview
 ```
 
-Vite builds the static site into `dist/`. The relative asset base is configured for both a root domain and a GitHub Pages project site.
+The Vite build produces the original page, a homepage route to it, and the React add-on at `app.html`. The relative asset base supports GitHub Pages project sites.
 
 ## Project structure
 
-- `src/App.jsx`: React application shell and incremental component composition.
-- `src/components/`: React-owned regions that preserve current content while interactions migrate.
-- `src/data/missions.json`: shared mission records.
-- `src/site-template.html`: existing page content preserved as the migration source.
-- `public/assets/`: original mission artwork and credited planetary maps.
-- `public/legacy/`: current DOM-based interactions retained during migration.
-- `public/styles/`: existing visual system.
-- `tools/build_solar_maps.py`: optional planetary sprite tool (requires NumPy, Pillow, and source maps passed with `--maps`).
-- `backups/`: previous designs and scripts.
+- `src/App.jsx`: React add-on with the mission archive, story reader, rover exhibit, and navigation.
+- `src/components/RoverMuseum.jsx` and `RoverScene.jsx`: on-demand interactive rover model and accessible component guide.
+- `app.html`: separate entry for the React add-on.
+- `src/data/missions.json`: preserved mission records and NASA source links.
+- `src/styles.css`: responsive visual system and motion preferences.
+- `public/assets/`: original mission illustrations and project mark.
+- `index.html`: routes visitors to the original animated homepage.
+- `NASA/Silent-Explorers.html`: original animation source; its animation scripts and styles remain unchanged.
+- `NASA/Pasted markdown.md`: project requirements and implementation plan.
 
-## Story navigation
+## Current migration milestone
 
-Scroll to animate the orbit, or use its previous/next buttons, arrow keys, and mission cards to navigate without page scrolling. The page uses native browser scrolling; there is no custom wheel or touch pacing layer.
+The React add-on preserves all six mission records, search and destination filters, mission stories, timelines, accessibility labels, and source links. Its rover exhibit is lazy-loaded near the viewport, supports mouse/touch orbit and zoom, provides a component list for keyboard users, and only animates the wheels when the visitor requests a demonstration. Reduced-motion mode pauses that demonstration. The original animated experience remains the default homepage; its footer links to the add-on. The rover is an educational approximation, not an engineering model.
+
+## Original animations
+
+The cosmic journey, destination controls, signal scene, animated story orbit, mission story presentation, and motion controls remain in `NASA/Silent-Explorers.html`. This migration only adds a footer link to the React add-on; the page's animation styles and scripts are unchanged.
 
 ## Credits
 
-See `public/assets/solar/ASSET_CREDITS.md` for planetary texture attribution and licensing. NASA mission sources are linked in the archive and story reader. Preserve these credits when sharing the project.
+Mission records link to NASA’s public mission pages. Mission illustrations are educational interpretations, not engineering models. The original experience includes its own planetary-art credits and NASA non-endorsement notice.
