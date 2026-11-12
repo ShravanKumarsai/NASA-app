@@ -4,10 +4,16 @@ An educational experience about the machines left on the Moon and Mars. The orig
 
 ## Run locally
 
+Use Node.js 20.19+ or 22.12+ and npm. Open the repository folder in VS Code, then install the dependencies:
+
 ```sh
 npm install
 npm run dev
 ```
+
+Vite prints a local URL (usually `http://localhost:5173`). Open that URL in your browser. The dev server refreshes the page as files change.
+
+You can also start the server from VS Code with **Terminal → Run Task → Run Silent Explorers (Vite)**. The **Live Server** extension is not used for this React app; it does not bundle the React imports. To check a production build, run **Terminal → Run Task → Build Silent Explorers** or `npm run build`.
 
 ## Build
 
