@@ -110,6 +110,34 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .story-nav { display: flex; gap: 10px; }
 .story-nav button { padding: 11px 15px; border: 1px solid #aeb8af; background: transparent; color: var(--ink); font-size: 11px; cursor: pointer; }
 
+.rover-museum { padding-block: 88px 104px; border-top: 1px solid var(--line); }
+.museum-intro > .eyebrow { margin-bottom: 22px; color: #606965; }
+.museum-heading-row { display: flex; justify-content: space-between; align-items: end; gap: 36px; }
+.museum-heading-row h2 { margin: 0; font-size: clamp(46px, 7vw, 86px); line-height: .96; font-weight: 500; letter-spacing: -.075em; }
+.museum-heading-row h2 span { color: #858d7f; }
+.museum-heading-row .section-description { max-width: 520px; margin: 18px 0 0; }
+.museum-model-note { flex: 0 0 auto; margin: 0 0 3px; color: #69716e; font: 9px/1.8 var(--mono); letter-spacing: .08em; text-align: right; }
+.museum-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, .7fr); gap: 28px; margin-top: 38px; }
+.rover-viewport { position: relative; height: min(52vw, 520px); min-height: 460px; overflow: hidden; border: 1px solid #303c3e; background: #111a1d; }
+.rover-viewport canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.rover-loading { min-height: 460px; display: grid; place-items: center; padding: 28px; color: #c4cec6; font: 11px/1.7 var(--mono); text-align: center; }
+.viewport-hint { position: absolute; right: 16px; bottom: 14px; pointer-events: none; color: #b9c4bc; font: 8px var(--mono); letter-spacing: .09em; }
+.viewport-hint span { padding-inline: 7px; color: var(--lime); }
+.rover-inspector { padding: 24px 0 0; }
+.rover-inspector > .eyebrow { color: #727a75; }
+.rover-inspector h3 { margin: 11px 0 5px; font-size: clamp(26px, 3vw, 38px); font-weight: 500; letter-spacing: -.05em; }
+.rover-inspector h3 span { color: #8a9b5a; }
+.inspector-label { margin: 0; color: #68716b; font: 10px var(--mono); }
+.inspector-description { min-height: 90px; margin: 20px 0; color: #515c55; font-size: 13px; line-height: 1.75; }
+.part-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.part-button { display: flex; align-items: center; gap: 8px; min-height: 39px; padding: 8px; border: 1px solid #cfd1c9; background: transparent; color: #29302d; text-align: left; font-size: 10px; cursor: pointer; }
+.part-button > span { color: #818982; font: 8px var(--mono); }
+.part-button.is-active { border-color: var(--deep); background: var(--deep); color: var(--paper); }
+.part-button.is-active > span { color: var(--lime); }
+.mechanism-toggle { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 16px; padding: 13px 14px; border: 0; background: #d4ff64; color: #171b1c; font-size: 11px; cursor: pointer; }
+.mechanism-toggle > span { font: 10px var(--mono); }
+.museum-source { display: inline-block; margin-top: 10px; }
+
 .legacy { padding-block: 85px 110px; border-top: 1px solid var(--line); }
 .legacy > .eyebrow { margin-bottom: 22px; color: #606965; }
 .legacy h2 { font-size: clamp(56px, 10vw, 132px); }
@@ -131,6 +159,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
   .mission-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .reader-content { grid-template-columns: 1fr 1fr; gap: 22px 5%; }
   .reader-art { margin-top: 25px; }
+  .museum-layout { grid-template-columns: 1fr; }
+  .rover-inspector { padding-top: 0; }
 }
 @media (max-width: 620px) {
   .section-wrap { width: min(100% - 36px, 520px); }
@@ -173,6 +203,13 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
   .story-nav { justify-content: space-between; }
   .story-nav button { flex: 1; }
   .legacy { padding-block: 70px 80px; }
+  .rover-museum { padding-block: 68px 78px; }
+  .museum-heading-row { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .museum-heading-row h2 { font-size: clamp(48px, 13vw, 68px); }
+  .museum-model-note { text-align: left; }
+  .museum-layout { gap: 20px; margin-top: 28px; }
+  .rover-viewport, .rover-loading { height: 340px; min-height: 340px; }
+  .part-selector { gap: 5px; }
   .legacy h2 { font-size: clamp(58px, 15vw, 88px); }
   .site-footer { align-items: flex-start; flex-wrap: wrap; }
   .site-footer p { order: 3; width: 100%; margin: 4px 0 0; }

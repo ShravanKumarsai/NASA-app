@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import RoverMuseum from './components/RoverMuseum.jsx';
 import missions from './data/missions.json';
 
 const destinations = [
@@ -217,6 +218,8 @@ function App() {
             </div>
           </section>
         )}
+
+        <RoverMuseum motionReduced={motionReduced} />
 
         <section className="legacy section-wrap" id="about" aria-labelledby="legacy-title">
           <p className="eyebrow">02 / WHY WE REMEMBER</p>

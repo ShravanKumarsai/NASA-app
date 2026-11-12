@@ -26,7 +26,8 @@ The Vite build produces the original page, a homepage route to it, and the React
 
 ## Project structure
 
-- `src/App.jsx`: React add-on with the mission archive, story reader, and navigation.
+- `src/App.jsx`: React add-on with the mission archive, story reader, rover exhibit, and navigation.
+- `src/components/RoverMuseum.jsx` and `RoverScene.jsx`: on-demand interactive rover model and accessible component guide.
 - `app.html`: separate entry for the React add-on.
 - `src/data/missions.json`: preserved mission records and NASA source links.
 - `src/styles.css`: responsive visual system and motion preferences.
@@ -37,7 +38,7 @@ The Vite build produces the original page, a homepage route to it, and the React
 
 ## Current migration milestone
 
-The React add-on preserves all six mission records, search and destination filters, mission stories, timelines, accessibility labels, and source links. The original animated experience remains the default homepage; its footer links to the add-on. New simulation and 3D sections will be added in later working phases.
+The React add-on preserves all six mission records, search and destination filters, mission stories, timelines, accessibility labels, and source links. Its rover exhibit is lazy-loaded near the viewport, supports mouse/touch orbit and zoom, provides a component list for keyboard users, and only animates the wheels when the visitor requests a demonstration. Reduced-motion mode pauses that demonstration. The original animated experience remains the default homepage; its footer links to the add-on. The rover is an educational approximation, not an engineering model.
 
 ## Original animations
 
