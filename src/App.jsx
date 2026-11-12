@@ -7,7 +7,7 @@ const destinations = [
   { id: 'mars', label: 'Mars' },
 ];
 
-const originalExperience = './NASA/Silent-Explorers.html';
+const originalExperience = './';
 const imageFor = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
         <nav className="primary-nav" aria-label="Main navigation">
           <a href="#archive">The archive</a>
           <a href="#about">Why we remember</a>
-          <a className="nav-original" href={originalExperience}>Original experience <span aria-hidden="true">↗</span></a>
+          <a className="nav-original" href={originalExperience}>Original animations <span aria-hidden="true">↗</span></a>
         </nav>
         <button
           className="motion-toggle"
@@ -222,14 +222,14 @@ function App() {
           <p className="eyebrow">02 / WHY WE REMEMBER</p>
           <h2 id="legacy-title">The wonder<br />never does<span>.</span></h2>
           <p>These machines are more than hardware. They are the work of people who asked a question, built a way to answer it, and sent a piece of us into the unknown.</p>
-          <a className="text-link" href={originalExperience}>Visit the original immersive experience <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href={originalExperience}>Return to the original animated experience <span aria-hidden="true">↗</span></a>
         </section>
       </main>
 
       <footer className="site-footer section-wrap">
         <div><a className="wordmark" href="#home"><img src={imageFor('mark.svg')} alt="" /><span>SILENT<br />EXPLORERS</span></a></div>
         <p>An independent educational experience inspired by NASA’s explorers.<br />NASA does not endorse this project.</p>
-        <a href={originalExperience}>Original experience ↗</a>
+        <a href={originalExperience}>Original animations ↗</a>
       </footer>
     </div>
   );

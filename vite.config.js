@@ -9,11 +9,12 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   build: {
-    // Keep the original, self-contained experience available while the React
-    // version is migrated section by section.
+    // The original animated experience stays at the site root. React features
+    // live on their own page as add-ons; the original source remains reachable.
     rolldownOptions: {
       input: {
-        app: resolve(root, 'index.html'),
+        home: resolve(root, 'index.html'),
+        app: resolve(root, 'app.html'),
         legacy: resolve(root, 'NASA/Silent-Explorers.html'),
       },
     },
