@@ -111,7 +111,7 @@ function RoverMuseum({ motionReduced }) {
               </button>
             ))}
           </div>
-          <button className="mechanism-toggle" type="button" aria-pressed={demo} onClick={() => setDemo((playing) => !playing)}>
+          <button className="mechanism-toggle" type="button" aria-pressed={demo} disabled={motionReduced} onClick={() => setDemo((playing) => !playing)}>
           {motionReduced ? 'Enable motion to demonstrate the wheels' : demo ? 'Pause wheel demonstration' : 'Demonstrate the wheels'} <span aria-hidden="true">{demo ? 'Ⅱ' : '▶'}</span>
           </button>
           <a className="source-link museum-source" href="https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-instruments/" target="_blank" rel="noopener noreferrer">

@@ -103,8 +103,8 @@ function Rover({ selectedPart, onSelectPart, demo }) {
           <meshStandardMaterial color={selectedPart === 'mast' ? selected : graphite} metalness={0.55} roughness={0.34} />
         </mesh>
         {[-0.105, 0.105].map((x) => (
-          <mesh key={x} position={[x, 0.99, -0.402]}>
-            <cylinderGeometry args={[0.055, 0.055, 0.032, 18]} rotation={[Math.PI / 2, 0, 0]} />
+          <mesh key={x} position={[x, 0.99, -0.402]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.055, 0.055, 0.032, 18]} />
             <meshStandardMaterial color="#85a8b1" metalness={0.8} roughness={0.14} />
           </mesh>
         ))}

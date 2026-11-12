@@ -135,6 +135,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .part-button.is-active { border-color: var(--deep); background: var(--deep); color: var(--paper); }
 .part-button.is-active > span { color: var(--lime); }
 .mechanism-toggle { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 16px; padding: 13px 14px; border: 0; background: #d4ff64; color: #171b1c; font-size: 11px; cursor: pointer; }
+.mechanism-toggle:disabled { cursor: not-allowed; opacity: .62; }
 .mechanism-toggle > span { font: 10px var(--mono); }
 .museum-source { display: inline-block; margin-top: 10px; }
 
